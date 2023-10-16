@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Simple Calculator</h1>
+
+    <form onsubmit="calculate(event)">
+        first number: <input id="firstNum" type="number" required step="0.1">
+        <br>
+        second number: <input id="secondNum" type="number" required step="0.1">
+        <br>
+        Operator(+,-,*,/): <input id="operate" type="text" required>
+        <button >Result</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script>
+
+        function calculate(event) {
+
+            event.preventDefault();
+            let firstNumber = document.querySelector("#firstNum").value;
+            let secondNumber = document.querySelector("#secondNum").value;
+            let operator = document.querySelector("#operate").value;
+
+            let result;
+            let message;
+
+       if (operator == '+') {
+
+        result = Number(firstNumber) + Number(secondNumber);
+        message = `${firstNumber} + ${secondNumber} = ${result}`
+        document.querySelector("#resultWindow").innerHTML = message
+
+       }
+       else if (operator == '-') {
+
+        result = Number(firstNumber) - Number(secondNumber);
+        message = `${firstNumber} - ${secondNumber} = ${result}`
+        document.querySelector("#resultWindow").innerHTML = message
+
+}
+       else if (operator == '*') {
+
+        result = Number(firstNumber) * Number(secondNumber);
+        message = `${firstNumber} x ${secondNumber} = ${result}`
+        document.querySelector("#resultWindow").innerHTML = message
+
+}
+       else if (operator == '/') {
+
+        result = Number(firstNumber) / Number(secondNumber);
+        message = `${firstNumber} / ${secondNumber} = ${result}`
+        document.querySelector("#resultWindow").innerHTML = message
+
+}
+       else {
+          console.log("Provide Correct Input")     
+       }
+
+
+        }
+    </script>
+</body>
+
+</html>
