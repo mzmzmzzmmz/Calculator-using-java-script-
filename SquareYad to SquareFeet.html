@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Celsius to Fahrenheit</h1>
+
+    <form onsubmit="converter(event)">
+        Enter Celsius: <input id="C" type="number" required>
+        <button>Convert</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script>
+        function converter(event) {
+
+            event.preventDefault();
+            let celsius = document.querySelector("#C").value;
+            
+            let result = Number(celsius * 9/5 + 32) ;
+
+            let message = `The Fahrenheit of ${celsius} = ${result}`
+
+            document.querySelector("#resultWindow").innerHTML = message
+
+        }
+    </script>
+</body>
+
+</html>
