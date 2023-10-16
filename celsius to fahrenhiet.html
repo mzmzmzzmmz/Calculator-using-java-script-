@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>SquareYard to SquareFeet</h1>
+
+    <form onsubmit="converter(event)">
+        Enter SquareYard: <input id="SySf" type="number" required step="0.1">
+        <button>Convert</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script>
+        function converter(event) {
+
+            event.preventDefault();
+            let squareYards = document.querySelector("#SySf").value;
+            
+            /* To convert square yards to square feet,
+            you can use the following formula:
+
+            Square Feet = Square Yards * 9
+
+            In this formula, you multiply the number of square yards by 9 
+            to get the equivalent area in square feet. 
+            This is because 1 square yard is equal to 9 square feet. */
+            
+            let result = Number(squareYards * 9) ;
+
+            let message = `The SquareFeet of ${squareYards} SquareYard = ${result}`
+
+            document.querySelector("#resultWindow").innerHTML = message
+
+        }
+    </script>
+</body>
+
+</html>
